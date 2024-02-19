@@ -1,4 +1,4 @@
-Genesis/notes.txt
-Genesis/node_modules
-Genesis/dist
+node_modules
+notes.txt
+dist
 .parcel-cache
