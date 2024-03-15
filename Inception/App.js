@@ -26,7 +26,8 @@ const styleCard = {
 };
 const RestaurantCard = (props) => {
     console.log(props);
-    const { resData } = props;
+    const { resData } = props; // destructuring
+    const {cloudinaryImageId,name,cuisines,avgRatingString,slaString,costForTwo}=resData?.info  //optional chaining
     return (
         <div className="res-card" style={{ backgroundColor: "#F0F0F0" }}>
             {/* another way to write css. */}
@@ -38,13 +39,13 @@ const RestaurantCard = (props) => {
                     resData.info.cloudinaryImageId
                 }
             />
-            <h3> {resData.info.name}</h3>
-            <h4> {resData.info.cuisines.join(", ")}</h4>
+            <h3> {name}</h3>
+            <h4> {cuisines.join(", ")}</h4>
             <h4>
-                {resData.info.avgRatingString}⭐ | {resData.info.sla.slaString}{" "}
+                {avgRatingString}⭐ | {slaString}{" "}
                 minutes
             </h4>
-            <h4>{resData.info.costForTwo}</h4>
+            <h4>{costForTwo}</h4>
         </div>
         // <div className="res-card" style={styleCard}>
         // {/* Another way to write css. */}
@@ -665,13 +666,18 @@ const Body = () => {
                 <button className="search-button">Search</button>
             </div>
             <div className="restaurant-container">
+                {
+                    resList.map(restaurant => (
+                        <RestaurantCard key={restaurant.info.id} resData={restaurant} />))
+                }
+                {/* Use keys => index as key <<< unique id */}
                 {/* <RestaurantCard
                     resName="McDonald's"
                     cuisine="American"
                     stars="4.3⭐"
                     time="25-30 mins"
                 /> */}
-                <RestaurantCard
+                {/* <RestaurantCard
                     resData={resList[0]}
                     // resName="KFC"
                     // cuisine="Non-Veg"
@@ -686,7 +692,8 @@ const Body = () => {
                 <RestaurantCard resData={resList[6]}/>
                 <RestaurantCard resData={resList[7]}/>
                 <RestaurantCard resData={resList[8]}/>
-                <RestaurantCard resData={resList[9]}/>
+                <RestaurantCard resData={resList[9]}/> */}
+            
             {/* <RestaurantCard/>  How to create these dynamically for others? by using props like passing props to a component (which means. passing a prop to a function is like passing an argument to a function)(properties) */}
             </div>
         </div>
