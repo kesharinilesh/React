@@ -11,7 +11,6 @@
     display:flex;
     list-style-type: None;
     padding:0px 20px;
-    
 }
 .Nav-items>ul>li{
     margin:20px;
@@ -19,14 +18,13 @@
 .body{
     margin-top:5px;
 }
-.search-bar{
-    font-size: 20px;
-}
 .search-button{
     font-size: 20px;
+    margin-left: 4px;
 }
 .restaurant-container{
-    padding:2px 0;
+    padding:1px 0;
+    margin-left: -4px;
     display:flex;
     flex-wrap:wrap
 }
