@@ -1,9 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import {useEffect, useState} from "react";
+import Shimmer from "./Shimmer";
+
 
 const Body = () => {
-    const [listOfRestaurants,setlistOfRestaurants] = useState(resList);
+    const [listOfRestaurants,setlistOfRestaurants] = useState([]);
 
     useEffect(()=>{fetchData();
     },[]);  //after body //normal function with a specific usecase. syntax -> useffect(callback func,dependency)
@@ -14,9 +16,16 @@ const Body = () => {
 
         const json = await data.json();
         console.log(json);  
-        setlistOfRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants); 
+        //Optional Chaining
+        setlistOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants); 
     }
-    return (
+
+    //Conditional rendering
+    // if (listOfRestaurants.length === 0){
+    //     return <h1>Loading....</h1>
+    // }
+    return listOfRestaurants.length===0 ? (
+        <Shimmer/>) : (
         <div className="body">
             <div className="filter">
                 {/* <input          
