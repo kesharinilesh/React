@@ -1,6 +1,6 @@
 import Cdn_url from "../utils/constants";
 const RestaurantCard = (props) => {
-    console.log(props);
+    // console.log(props);
     const { resData } = props; // destructuring
     const {cloudinaryImageId,name,cuisines,avgRatingString,slaString,costForTwo}=resData?.info  //optional chaining
     return (

@@ -13,6 +13,15 @@
     top:0;
     left:0;
 }
+.login{
+    cursor:pointer;
+    font-size:19px;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
 .Nav-items > ul{
     font-size:20px;
     display:flex;
@@ -21,6 +30,9 @@
     position:fixed;
     top:0;
     right:0;
+}
+.filter-btn{
+    margin-left:10px;
 }
 .Nav-items>ul>li{
     margin:20px; 
