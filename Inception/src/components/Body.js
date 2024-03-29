@@ -5,16 +5,20 @@ import Shimmer from "./Shimmer";
 
 
 const Body = () => {
+    // Purpose: The useState hook allows functional components to manage state within the component.
     const [listOfRestaurants,setlistOfRestaurants] = useState([]);
 
     useEffect(()=>{fetchData();
     },[]);  //after body //normal function with a specific usecase. syntax -> useffect(callback func,dependency)
     // console.log("Body Rendered")  //get printed first
-    
+// Purpose: The useEffect hook allows you to perform side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM.
+// basically to manage asynchronous nature of state updates.
+// Syntax: You provide a function as the first argument to useEffect, which will be executed after the component has rendered. Optionally, you can provide a second argument, an array of dependencies, to control when the effect runs.
+// Usage: useEffect is used when you need to perform actions in response to component lifecycle events (component mount, update, unmount) or when certain values change.
     const [searchText,setsearchText] = useState("");
     const [filteredRestaurants, setfilteredRestaurants] = useState([]);
     console.log("Body Rendered")
-    //whenever state variable changes react triggers a reconcilation cycle(rerenders the component)
+//whenever state variable changes react triggers a reconcilation cycle(rerenders the component)
 
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.49690&lng=80.32460&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
