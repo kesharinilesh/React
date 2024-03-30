@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 
 
 const Body = () => {
+    //local state variable- Super powerful variable
     const [listOfRestaurants,setlistOfRestaurants] = useState([]);
 
     useEffect(()=>{fetchData();
