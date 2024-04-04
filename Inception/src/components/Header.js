@@ -1,5 +1,6 @@
 import {Logo_url} from '../utils/constants';
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     let [loginbtn,setbtn] = useState("Login");
@@ -13,12 +14,12 @@ const Header = () => {
             </div>
             <div className="Nav-items">
                 <ul>
-                    <li>Home</li>
+                    <li><Link to="/">Home</Link></li>
                     <li>Offers</li>
-                    <li>About Us</li>
-                    <li>Cart</li>
+                    <li><Link to="/About">About Us</Link></li>
+                    <li><Link to="/Contact">Contact</Link></li>
                     <button className="login" onClick={()=>{
-                        loginbtn==="Logout"?loginbtn="Login":loginbtn="Logout";
+                        loginbtn==="Logout"?loginbtn="Login":loginbtn="Logout";  //ternary operators
                         setbtn(loginbtn);
                         console.log(loginbtn);
                     }}>{loginbtn}</button>
