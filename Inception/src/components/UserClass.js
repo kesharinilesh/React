@@ -1,16 +1,22 @@
 import React from 'react';
+//import {component} from 'react';
 //loading a classbase component on a page that means we are creating the new instance of the class.
 // And when we create a new instance constructor is called so that's the best place to receive props and best place to create state variables as well.
 class UserClass extends React.Component {
     constructor(props) {
         super(props);
         console.log(props);
+        console.log("Child constructor");
         this.state = {
             count:1,
             count2:2,
         };
     }
+    componentDidMount(){
+        console.log(this.props.name+"Child mounted")
+    }
     render() {
+        console.log("Child rendered")
         const{name}=this.props;
         const{count2}=this.state;
         return <div className="user-card">
