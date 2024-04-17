@@ -5,28 +5,44 @@ import React from 'react';
 class UserClass extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
-        console.log("Child constructor");
+        // console.log(props);
+        // console.log("Child constructor");
         this.state = {
             count:1,
             count2:2,
+            userInfo:{
+                name:"Dummmy",
+                location:"Default",
+            }
         };
     }
-    componentDidMount(){
-        console.log(this.props.name+"Child mounted")
+    async componentDidMount() {
+        // console.log(this.props.name+"Child mounted")
+        const data = await fetch("https://api.github.com/users/kesharinilesh");
+        const json = await data.json();
+        console.log(json)
+        
+        this.setState({userInfo:json})
+        console.log(json)
+    }
+    componentDidUpdate(){
+        console.log("Component Updated")
+    }
+    componentWillUnmount(){
+        console.log("Component Unmounted")
     }
     render() {
-        console.log("Child rendered")
+        // console.log("Child rendered")
         const{name}=this.props;
         const{count2}=this.state;
         return <div className="user-card">
-        <h3>S.No:{this.state.count}</h3>
+        {/* <h3>S.No:{this.state.count}</h3> */}
         {/*Could be also destructured */}
-        <h3>S.No_2:{count2}</h3>
-        <button onClick={()=>{
+        {/* <h3>S.No_2:{count2}</h3> */}
+        {/* <button onClick={()=>{
             this.setState(
                 {count2:this.state.count2+1});
-        }}>Increase Counter</button>
+        }}>Increase Counter</button> */}
         <h2>Name: {name}</h2>
         <h3>Role: Software Engineer</h3>
         <h3>Email: {this.props.email}</h3>
@@ -36,3 +52,23 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+/*
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+---Mounting  //Showing on to the UI unmounting means removing fromt the UI
+-
+Constuctor
+Render
+<HTML> DUmmy
+Component did mount
+<API Call>
+<this.setState> -> State variable is updated
+
+---Update
+render (API data)
+HTML (new API data)
+
+Component did update
+*/
