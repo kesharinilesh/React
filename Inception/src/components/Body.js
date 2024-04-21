@@ -3,10 +3,12 @@ import resList from "../utils/mockData";
 import {useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     //local state variable- Super powerful variable
     const [listOfRestaurants,setlistOfRestaurants] = useState([]);
+    const onlineStatus = useOnlineStatus();
 
     useEffect(()=>{fetchData();
     },[]);  //after body //normal function with a specific usecase. syntax -> useffect(callback func,dependency)
@@ -59,6 +61,7 @@ const Body = () => {
                         setfilteredRestaurants(filteredList);
                     }}>
                     Top Rated Restaurants</button>
+                <span className="status">Online Status : {onlineStatus ? '🟢' : '🔴'}</span>
             </div>
             <div className="restaurant-container">
                 {
