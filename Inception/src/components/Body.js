@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import {useEffect, useState} from "react";
+import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -51,7 +51,7 @@ const Body = () => {
                 <button className="search-btn" 
                 onClick={()=>{
                     const searchedRestaurants = listOfRestaurants.filter(
-                        (res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
+                        (res)=>res.info.name?.toLowerCase().includes(searchText.toLowerCase()))
                         setfilteredRestaurants(searchedRestaurants); //
                 }}>Search</button>
                 <button className="filter-btn" 

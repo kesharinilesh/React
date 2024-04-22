@@ -15,7 +15,7 @@ const Header = () => {
             <div className="Nav-items">
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li>Offers</li>
+                    <li><Link to="/Instamart">Instamart</Link></li>
                     <li><Link to="/About">About Us</Link></li>
                     <li><Link to="/Contact">Contact</Link></li>
                     <button className="login" onClick={()=>{
