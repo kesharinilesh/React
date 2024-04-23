@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     let [loginbtn,setbtn] = useState("Login");
     return (
-        <div className="header">
+        <header className="header">
             <div className="logo-container">
                 <img
                     className="logo"
@@ -26,7 +26,7 @@ const Header = () => {
 
                 </ul>
             </div>
-        </div>
+        </header>
     );
 };
 
