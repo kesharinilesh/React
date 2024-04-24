@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     let [loginbtn,setbtn] = useState("Login");
     return (
-        <header className="header">
-            <div className="logo-container">
+        <header className="flex place-content-between items-center bg-pink-200 pl-10 shadow-black">
+            <div>
                 <img
-                    className="logo"
+                    className="w-28"
                     src={Logo_url}
                 ></img>
             </div>
-            <div className="Nav-items">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/Instamart">Instamart</Link></li>
-                    <li><Link to="/About">About Us</Link></li>
-                    <li><Link to="/Contact">Contact</Link></li>
-                    <button className="login" onClick={()=>{
+            <div >
+                <ul className='flex content-between space-x-12 pr-12'>
+                    <li className='text-lg'><Link to="/">Home</Link></li>
+                    <li className='text-lg'><Link to="/Instamart">Instamart</Link></li>
+                    <li className='text-lg'><Link to="/About">About Us</Link></li>
+                    <li className='text-lg'><Link to="/Contact">Contact</Link></li>
+                    <button className='text-lg' onClick={()=>{
                         loginbtn==="Logout"?loginbtn="Login":loginbtn="Logout";  //ternary operators
                         setbtn(loginbtn);
                         console.log(loginbtn);

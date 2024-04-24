@@ -34,36 +34,36 @@ const Body = () => {
     // }
     return listOfRestaurants.length===0 ? (
         <Shimmer/>) : (
-        <div className="body">
-            <div className="filter">
+        <div className="bg-blue-200">
+            <div className="">
                 {/* <input          
                     type="text"
                     className="search-bar"
                     placeholder="See nearby places"
                 ></input> */}
-                <input className="search-bar" value={searchText} 
+                <input className="ml-24 pl-30 mt-4 mr-2 border border-gray-200 rounded" value={searchText} 
                 onChange={(e)=>{
                     setsearchText(e.target.value);
                     // console.log(e.target.value);
                     }}
                 >
                 </input>
-                <button className="search-btn" 
+                <button className="mr-12 px-2 border border-gray-200 rounded bg-blue-500 text-white" 
                 onClick={()=>{
                     const searchedRestaurants = listOfRestaurants.filter(
                         (res)=>res.info.name?.toLowerCase().includes(searchText.toLowerCase()))
                         setfilteredRestaurants(searchedRestaurants); //
                 }}>Search</button>
-                <button className="filter-btn" 
+                <button className="px-2 bg-red-700 text-white rounded border border-gray-200" 
                     onClick={()=>{
                         const filteredList=filteredRestaurants.filter((res)=>res.info.avgRating>4.3);
                         // console.log(filteredList);
                         setfilteredRestaurants(filteredList);
                     }}>
                     Top Rated Restaurants</button>
-                <span className="status">Online Status : {onlineStatus ? '🟢' : '🔴'}</span>
+                <span className="ml-[800]">Online Status : {onlineStatus ? '🟢' : '🔴'}</span>
             </div>
-            <div className="restaurant-container">
+            <div className="ml-14 p-4 flex flex-wrap">
                 {
                     filteredRestaurants.map(restaurant => (
                         <Link key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>))
