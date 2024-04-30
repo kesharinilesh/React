@@ -3,12 +3,11 @@ import resList from "../utils/mockData";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 const Body = () => {
     //local state variable- Super powerful variable
     const [listOfRestaurants,setlistOfRestaurants] = useState([]);
-    const onlineStatus = useOnlineStatus();
 
     useEffect(()=>{fetchData();
     },[]);  //after body //normal function with a specific usecase. syntax -> useffect(callback func,dependency)
@@ -22,7 +21,7 @@ const Body = () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.49690&lng=80.32460&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
         const json = await data.json();
-        // console.log(json);  
+        // console.log(json);   
         //Optional Chaining
         setlistOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants); 
         setfilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -48,20 +47,20 @@ const Body = () => {
                     }}
                 >
                 </input>
-                <button className="mr-12 px-2 border border-gray-200 rounded bg-blue-500 text-white" 
+                <button className="mr-12 px-2 border rounded hover:bg-blue-500 bg-blue-700 text-white" 
                 onClick={()=>{
                     const searchedRestaurants = listOfRestaurants.filter(
                         (res)=>res.info.name?.toLowerCase().includes(searchText.toLowerCase()))
                         setfilteredRestaurants(searchedRestaurants); //
                 }}>Search</button>
-                <button className="px-2 bg-red-700 text-white rounded border border-gray-200" 
+                <button className="px-2 bg-red-800 text-white rounded border hover:bg-red-600 border-gray-200" 
                     onClick={()=>{
                         const filteredList=filteredRestaurants.filter((res)=>res.info.avgRating>4.3);
                         // console.log(filteredList);
                         setfilteredRestaurants(filteredList);
                     }}>
                     Top Rated Restaurants</button>
-                <span className="ml-[800]">Online Status : {onlineStatus ? '🟢' : '🔴'}</span>
+                
             </div>
             <div className="ml-14 p-4 flex flex-wrap">
                 {
