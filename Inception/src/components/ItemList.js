@@ -10,12 +10,14 @@ const ItemList = ({items}) => {
                     <span>{item.card.info.name}</span><br/>
                     <span>Rs. {item.card.info.price ? item.card.info.price / 100 : 349}</span>
                 <p className="text-sm pt-2 ">{item.card.info.description}</p>
+                {console.log(item.card.info)}
                 </div>
                 <div className="w-1/5 relative">
                 <div className="absolute bottom-0 mb-2 left-1/3">
                 <button className="rounded-sm px-1 font-mono border bg-white">Add +</button>
                 </div>
                 <img className="rounded-md" alt="Not available" src={Cdn_url+item.card.info.imageId}/>
+                {/* ? item.card.info.imageId : resData.info.cloudinaryImageId */}
                 </div>
             </div>))}
     </div>
