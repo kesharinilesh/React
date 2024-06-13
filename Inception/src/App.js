@@ -9,6 +9,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import {Provider} from 'react-redux'; 
+import appStore from './utils/appStore';
 
 //Chunking
 //LazyLoading
@@ -20,6 +22,7 @@ const Instamart = lazy(()=>import ("./components/Instamart"));
 
 const AppLayout = () => {
     return (
+        <Provider store={appStore}>
         <div className="app">
             <Header />
             {/* if path="/"
@@ -28,6 +31,7 @@ const AppLayout = () => {
             {/* <About />  */}
             <Outlet />
         </div>
+        </Provider>
     );
 };
 
