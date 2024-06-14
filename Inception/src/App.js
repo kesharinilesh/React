@@ -6,7 +6,7 @@ import Body from "./components/Body";
 import {createRoot} from "react-dom/client";
 import {createBrowserRouter,Outlet,RouterProvider} from "react-router-dom";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import {Provider} from 'react-redux'; 
@@ -49,8 +49,8 @@ const appRouter=createBrowserRouter([
             {path: "/instamart",
             element:<Suspense fallback={<h2>Loading...</h2>}><Instamart /></Suspense>
             },
-            {path: "/contact",
-            element:<Contact />
+            {path: "/cart",
+            element:<Cart />
             },
             {
                 path:"/restaurants/:resId",
