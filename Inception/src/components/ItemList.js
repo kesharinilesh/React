@@ -7,9 +7,9 @@ const ItemList = ({items}) => {
 
 
     const dispatch=useDispatch();
-    const handleAddItem = () => {
+    const handleAddItem = (item) => {
         //Dispatch an item
-        dispatch(addItem("pizza"));  // this will go inside payload
+        dispatch(addItem(item));  // this will go inside payload
     }
     return <div className="text-left font-semibold">
             {items.map((item)=>(
@@ -22,7 +22,7 @@ const ItemList = ({items}) => {
                 </div>
                 <div className="w-1/5 relative">
                 <div className="absolute bottom-0 mb-2 left-1/3">
-                <button className="rounded-sm px-1 font-mono border bg-white" onClick={handleAddItem}>Add +</button>
+                <button className="rounded-sm px-1 font-mono border bg-white" onClick={()=>handleAddItem(item)}>Add +</button>
                 </div>
                 <img className="rounded-md" alt="Not available" src={Cdn_url+item.card.info.imageId}/>
                 {/* ? item.card.info.imageId : resData.info.cloudinaryImageId */}
