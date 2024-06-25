@@ -24,7 +24,7 @@ const Header = () => {
             <div >
                 <ul className='flex content-between space-x-12 pr-12'>
                     <li className='text-lg'><Link to="/">Home</Link></li>
-                    <li className='text-lg'><Link to="/Instamart">Instamart</Link></li>
+                    <li className='text-lg'><Link to="/ContactUs">ContactUs</Link></li>
                     <li className='text-lg'><Link to="/About">About Us</Link></li>
                     <li className='text-xl '><Link to="/Cart">Cart ({cartItems.length} Items)</Link></li>
                     <li className='text-lg'>Online Status : {onlineStatus ? '🟢' : '🔴'}</li>

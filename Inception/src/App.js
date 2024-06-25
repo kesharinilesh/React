@@ -18,7 +18,7 @@ import appStore from './utils/appStore';
 //Code Splitting
 //ondemandloading
 
-const Instamart = lazy(()=>import ("./components/Instamart"));
+const ContactUs = lazy(()=>import ("./components/ContactUs"));
 
 const AppLayout = () => {
     return (
@@ -46,8 +46,8 @@ const appRouter=createBrowserRouter([
             {path: "/about",
             element:<About />
             },
-            {path: "/instamart",
-            element:<Suspense fallback={<h2>Loading...</h2>}><Instamart /></Suspense>
+            {path: "/contactus",
+            element:<Suspense fallback={<h2>Loading...</h2>}><ContactUs /></Suspense>
             },
             {path: "/cart",
             element:<Cart />
