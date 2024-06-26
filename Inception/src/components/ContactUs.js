@@ -27,6 +27,7 @@ const ContactUs = () => {
           type="email"
           id="email"
           name="email"
+          placeholder='@gmail.com'
           required
           className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
