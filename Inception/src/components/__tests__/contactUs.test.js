@@ -2,7 +2,9 @@ import {getAllByRole, getAllByText, render,screen} from '@testing-library/react'
 import "@testing-library/jest-dom";
 import ContactUs from '../ContactUs';
 
-test("Heading of Contact us component should appear",()=>{
+
+describe("Contact Us Page Testing",() => {
+it("Heading of Contact us component should appear",()=>{
     render(<ContactUs />);
     const heading = screen.getByRole("heading");
     //Assertion
@@ -14,7 +16,7 @@ test("Button of Contact us component should appear",()=>{
     //Assertion
     expect(button).toBeInTheDocument();
 })
-test("Submit button of Contact us component should appear",()=>{
+test("should load Submit button of Contact us component",()=>{
     render(<ContactUs />);
     const button = screen.getByText("Submit");
     //Assertion
@@ -32,4 +34,5 @@ test("Should load all the input boxes",()=>{
     const inputBox = screen.getAllByRole("textbox");
     expect(inputBox.length).toBe(3);
     console.log(inputBox.length);
+})
 })
