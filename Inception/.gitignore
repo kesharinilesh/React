@@ -3,3 +3,4 @@ notes.txt
 dist
 .parcel-cache
 .cache
+.coverage
