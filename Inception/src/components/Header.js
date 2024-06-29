@@ -11,7 +11,7 @@ const Header = () => {
     //useSelector - It is a hook, it will give us access to the store
     // Subscribing to the store using a selector
     const cartItems= useSelector((store)=>store.cart.items);
-    console.log(cartItems);
+    // console.log(cartItems);
 
     return (
         <header className="flex place-content-between items-center bg-pink-200 pl-10 shadow-black">

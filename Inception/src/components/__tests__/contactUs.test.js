@@ -33,6 +33,6 @@ test("Should load all the input boxes",()=>{
     render(<ContactUs />);
     const inputBox = screen.getAllByRole("textbox");
     expect(inputBox.length).toBe(3);
-    console.log(inputBox.length);
+    // console.log(inputBox.length);
 })
 })
