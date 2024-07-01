@@ -4,6 +4,7 @@ const RestaurantCard = (props) => {
     const { resData } = props; // destructuring
     const {cloudinaryImageId,name,cuisines,avgRatingString,slaString,costForTwo}=resData?.info  
     //optional chaining
+    console.log(resData)
 
     
     return (
