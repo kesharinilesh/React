@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
     
     return (
         <div className="">
-        <div className="m-4 p-4 w-60 h-[455] bg-gray-200 rounded-lg" >
+        <div data-testid="rescard" className="m-4 p-4 w-60 h-[455] bg-gray-200 rounded-lg" >
         {/* style={{ backgroundColor: "#F0F0F0" }} another way to write css. */}
             <img
                 className="w-30 h-[245] rounded-md"

@@ -40,7 +40,7 @@ const Body = () => {
                     className="search-bar"
                     placeholder="See nearby places"
                 ></input> */}
-                <input className="ml-24 pl-30 mt-4 mr-2 border border-gray-200 rounded" value={searchText} 
+                <input data-testid="searchInput" className="ml-24 pl-30 mt-4 mr-2 border border-gray-200 rounded" value={searchText} 
                 onChange={(e)=>{
                     setsearchText(e.target.value);
                     // console.log(e.target.value);

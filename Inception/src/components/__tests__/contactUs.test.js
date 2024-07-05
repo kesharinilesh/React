@@ -4,6 +4,14 @@ import ContactUs from '../ContactUs';
 
 
 describe("Contact Us Page Testing",() => {
+    // beforeAll(()=>{
+    //     console.log("Testing Contact Us Page")
+    // });
+    // beforeEach(()=>{
+    //     console.log("Before Each testing")
+    // });
+    // afterAll(()=>{"afterAll"});
+    // afterEach(()=>{"afterEach"});
 it("Heading of Contact us component should appear",()=>{
     render(<ContactUs />);
     const heading = screen.getByRole("heading");
