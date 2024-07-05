@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,34 +111,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,16 +153,16 @@ import { Link } from 'react-router-dom';
 import useOnlineStatus from "../utils/useOnlineStatus";
 import {useSelector} from "react-redux";
 &nbsp;
-const Header = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-    let [loginbtn,setbtn] = <span class="cstat-no" title="statement not covered" >useState("Login");</span>
-    const onlineStatus = <span class="cstat-no" title="statement not covered" >useOnlineStatus(); </span>
+const Header = () =&gt; {
+    let [loginbtn,setbtn] = useState("Login");
+    const onlineStatus = useOnlineStatus(); 
 &nbsp;
     //useSelector - It is a hook, it will give us access to the store
     // Subscribing to the store using a selector
-    const cartItems= <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tore)=&gt;<span class="cstat-no" title="statement not covered" >store.cart.items)</span>;</span>
+    const cartItems= useSelector((store)=&gt;store.cart.items);
     // console.log(cartItems);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;header className="flex place-content-between items-center bg-pink-200 pl-10 shadow-black"&gt;
             &lt;div&gt;
                 &lt;img
@@ -176,11 +176,11 @@ const Header = <span class="fstat-no" title="function not covered" >()</span> =&
                     &lt;li className='text-lg'&gt;&lt;Link to="/ContactUs"&gt;ContactUs&lt;/Link&gt;&lt;/li&gt;
                     &lt;li className='text-lg'&gt;&lt;Link to="/About"&gt;About Us&lt;/Link&gt;&lt;/li&gt;
                     &lt;li className='text-xl '&gt;&lt;Link to="/Cart"&gt;Cart ({cartItems.length} Items)&lt;/Link&gt;&lt;/li&gt;
-                    &lt;li className='text-lg'&gt;Online Status : {onlineStatus ? '🟢' : '🔴'}&lt;/li&gt;
-                    &lt;button className='text-lg border w-20 bg-pink-600 hover:bg-pink-400 px-3 text-white rounded' onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;{
-<span class="cstat-no" title="statement not covered" >                        loginbtn==="Logout"?loginbtn="Login":loginbtn="Logout"; </span> //ternary operators
-<span class="cstat-no" title="statement not covered" >                        setbtn(loginbtn);</span>
-<span class="cstat-no" title="statement not covered" >                        console.log(loginbtn);</span>
+                    &lt;li className='text-lg'&gt;Online Status : {onlineStatus ? '🟢' : <span class="branch-1 cbranch-no" title="branch not covered" >'🔴'}</span>&lt;/li&gt;
+                    &lt;button className='text-lg border w-20 bg-pink-600 hover:bg-pink-400 px-3 text-white rounded' onClick={()=&gt;{
+                        loginbtn==="Logout"?<span class="branch-0 cbranch-no" title="branch not covered" >loginbtn="Login":</span>loginbtn="Logout";  //ternary operators
+                        setbtn(loginbtn);
+                        console.log(loginbtn);
                     }}&gt;{loginbtn}&lt;/button&gt;
 &nbsp;
                 &lt;/ul&gt;
@@ -196,7 +196,7 @@ export default Header;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-05T15:16:56.957Z
+                at 2024-07-05T15:42:44.012Z
             </div>
         <script src="../prettify.js"></script>
         <script>

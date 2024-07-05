@@ -13,7 +13,7 @@ const ItemList = ({items}) => {
     }
     return <div className="text-left font-semibold">
             {items.map((item)=>(
-            <div className="py-2 border-b-2 text-m flex" key={item.card.info.id}>
+            <div data-testid="foodItems" className="py-2 border-b-2 text-m flex" key={item.card.info.id}>
                 <div className="m-2 w-4/5">
                     <span>{item.card.info.name}</span><br/>
                     <span>Rs. {item.card.info.price ? item.card.info.price / 100 : 349}</span>

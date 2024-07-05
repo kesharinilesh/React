@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils/cartSlice.js</title>
+    <title>Code coverage report for components/Cart.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> cartSlice.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Cart.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,53 +86,65 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {createSlice} from '@reduxjs/toolkit';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useSelector } from "react-redux";
+import ItemList from "./ItemList";
+import { clearCart } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 &nbsp;
-const cartSlice = createSlice({
-    name: 'cart',
-    initialState: {
-        items:[],
-    },
-    reducers: {
-        //reducer funtions
-        addItem: <span class="fstat-no" title="function not covered" >(s</span>tate,action)=&gt;{
-            //mutating the state here (directly modifying)
-<span class="cstat-no" title="statement not covered" >            state.items.push(action.payload);</span>
-        },
-        removeItem: <span class="fstat-no" title="function not covered" >(s</span>tate,action)=&gt;{
-<span class="cstat-no" title="statement not covered" >            state.items.pop();</span>
-        }, 
-        clearCart: <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt;{
-<span class="cstat-no" title="statement not covered" >            state.items.length = 0;</span>
-        },
-    },
-});
 &nbsp;
-export const {addItem,removeItem,clearCart} = cartSlice.actions;
-export default cartSlice.reducer;</pre></td></tr></table></pre>
+const Cart = () =&gt; {
+    const cartItems = useSelector((store)=&gt;store.cart.items);
+    // const store = useSelector((store)=&gt;store); // subscribing the whole store very less efficient
+    // const cartItems = store.cart.items;
+    //make sure you subscribe to the right portion of the store both the codes have same fucntion but the later one isn't optimized as any change will happen to the store the later code will get to know about everything. That's why always subscribe to the right portion of the store. 
+    const dispatch = useDispatch();
+    const handleClearCart = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        dispatch(clearCart());</span>
+    };
+    return (
+    &lt;div className="text-center m-4 p-4 "&gt;
+        &lt;h2 className="font-semibold text-xl"&gt;Cart&lt;/h2&gt;
+        &lt;div className="w-6/12 m-auto"&gt;
+            &lt;button className="text-center mt-2 px-2 bg-black text-white rounded" onClick={handleClearCart}&gt;Clear Cart&lt;/button&gt;
+            &lt;ItemList items={cartItems}/&gt;
+            {cartItems.length === 0 &amp;&amp; (&lt;h2 className="my-4"&gt;Oops your cart is empty! Add items to the cart.&lt;/h2&gt;)}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    )
+}
+&nbsp;
+export default Cart;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
