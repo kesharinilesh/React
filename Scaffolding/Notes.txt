@@ -1,0 +1,47 @@
+//configured the scripts in package.json
+# npm start == npm run start (to develop production environment)
+# npm run build (to develop build environment)
+
+#jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+//React.createELement => Object
+
+const heading = React.createElement(
+    "h1",
+    { id: "heading" },
+    "I'm learning react by myself🚀"
+);
+
+// when we render this element onto the DOM, then it becomes an HTML.
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render pushes everything to the browser which means it will replace everything
+// root.render(heading);
+
+// (Javascript XML)JSX is different from React, we use it to minimise the code because it is developer friendly
+
+// JSX is not HMTL (it is html or xml in terms of syntax)
+
+const jsxHeading = (
+    <h1 id="heading">I'm learning react by myself🚀 using JSX</h1>
+);
+// JSZ is a mix of HTML and JS.
+//if you want to give class to the above JSX syntax, you use className="head" but in HTML we simply write class='head'.
+// React element using jsx example
+//Attributes must be in camelCase.
+// for writing in multiple lines we enclose the code in round brackets"()" so that babel could understand.
+
+console.log(heading);
+console.log(jsxHeading);
+
+root.render(jsxHeading);
+// JS do not comes with JSX JS engine only understands ECMA scripts.
+// JSX  is (converted)transpiled(Parcel-Babel (package))i.e, converts JSX into a react code before it reaches the JS engine or browsers so that they could understand)
+
+//Babel is a Javascript compiler that does a lot of transpilation of Javascript code so that older versions could be able to understand.
+//Parcel is the manager of babel
+
+//Component Composition when one component is used inside the other

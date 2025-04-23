@@ -1,0 +1,62 @@
+// Npm is not a node package manager, It does not have any full form. It works as node package manager.
+
+// Two types of dependecies - dev (required in development phase) and normal (used for production)
+
+// What is Bundler? It is a package manager that can be used to build applications(web pack, parcel,etc)
+
+// In the JavaScript ecosystem, bundlers play a crucial role in managing dependencies and packaging code for deployment
+
+// When working on a React project, you typically use a combination of a bundler along with a package manager like npm or Yarn to manage dependencies. You create a package.json file to list your project dependencies, including React and other libraries, and the bundler takes care of bundling them for production
+
+//npm init (first line)
+
+//to install any package or library - npm i "name of the package"
+//package lock.json keeps a track of all the exact version of dependencies used.
+
+//package.json is a configuration for our npm and node modules contains all the code that are fetched from parcel (like a database of all the codes of the dependencies)
+// Dependencies of the dependencies => transitive dependecies [like we installed parcel and since parcel uses other libraries and dependencies and those dependencies have their own dependencies, so everything got installed at once when we did "npm install -D parcel"]
+
+//with the help of package.json and package-lock.json we can recreate the node modules.
+
+//npm is installing command whereas npx is executing
+//to run codes we use "npx parcel index.html"
+//cdn links are not preferred way to bring react as it will make another network call and if any other version of react comes up then we'll have to update the links so run npm install react react-Dom
+// then use npx parcel index.html to run the application
+// you can modify the package.json with this 
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+    to create build and dev environments differently
+    make sure to remove "main" attribute otherwise it will throw an error.
+
+#parcel did all of this (not just bundling it is a beast)
+-dev build
+-local server
+-HMR (Hot module replacement) (automatically refreshes the page) how?
+-parcel is using file watching algorithm - which iswritten in c++
+-caching - faster development builds
+-image optimisation(most expensive things in a web browser)
+-minification
+-bundling
+-compressing
+-consistent hashing
+-code splitting
+-differential bundling -gives support for older browsers
+-diagnose fixes
+-error handling
+-gives you ways to host apps on HTTPs
+-Tree Shaking - remove unused codes
+
+Parcel is a beast
+Virat Kohli is React but Rohit Sharma is Parcel
+
+-different dev and production build bundles
+(to create prod build just add build instead of '-D')(it takes more time than dev build)
+**
+now it will throw an error so to fix that we need to remove main in package.json
+**
+production ready code is in dist folder(it will do minification and compression)
+
+browserslist (we use to make our production ready app to support older browsers) it is an npm package(check website for more browserlist.dev)
+
+-----------------------------------------------------------
+
